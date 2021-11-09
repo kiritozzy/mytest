@@ -1,0 +1,945 @@
+{
+	"info": {
+		"_postman_id": "c07cd3eb-1e5c-4e5a-9ae9-40dd10e0055e",
+		"name": "yike2.7.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CRM私海",
+			"item": [
+				{
+					"name": "主动跟进公海客户",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"测试\",function(){\r",
+									"    pm.expect(pm.response.text()).to.include(\"200\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNSwidXNlcm5hbWUiOiIxMzEyMzQ1Njc4MSIsImV4cCI6MTYzNjU5MjY3NywiZW1haWwiOiIxNzYyMDk4OTAxNUAxNjMuY29tIiwibW9iaWxlIjoiMTMxMjM0NTY3ODEifQ.hBUYbCQ5L2LcxAph1ctp-I7CRBoERRsbHaNcVSZ4quU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/clients/following/acquire/?user_id=430",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"clients",
+								"following",
+								"acquire",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "430"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "公海客户列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNSwidXNlcm5hbWUiOiIxMzEyMzQ1Njc4MSIsImV4cCI6MTYzNjU5MjY3NywiZW1haWwiOiIxNzYyMDk4OTAxNUAxNjMuY29tIiwibW9iaWxlIjoiMTMxMjM0NTY3ODEifQ.hBUYbCQ5L2LcxAph1ctp-I7CRBoERRsbHaNcVSZ4quU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/public/clients/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"public",
+								"clients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "公海客户详情",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"var res=JSON.parse(responseBody)\r",
+									"tests[\"id测试通过\"]=res.data.id=\"430\"\r",
+									"tests[\"name测试通过\"]=res.name=\"大大\""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NDQ2MjkwLCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.OaPXG3oseTU_v-32PMJ7pf3r_gT7DzggeJINKzGJJjs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/public/clients/430/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"public",
+								"clients",
+								"430",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "公海待分配客户列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNSwidXNlcm5hbWUiOiIxMzEyMzQ1Njc4MSIsImV4cCI6MTYzNjU5MjY3NywiZW1haWwiOiIxNzYyMDk4OTAxNUAxNjMuY29tIiwibW9iaWxlIjoiMTMxMjM0NTY3ODEifQ.hBUYbCQ5L2LcxAph1ctp-I7CRBoERRsbHaNcVSZ4quU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/public/clients/shop/2/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"public",
+								"clients",
+								"shop",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "公海销售人员列表",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// var res=JSON.parse(responseBody);\r",
+									"pm.test(\"name为李老师\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"李老师\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443//api/headquarters/crm/public/salesman/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"",
+								"api",
+								"headquarters",
+								"crm",
+								"public",
+								"salesman",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分配客户",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"测试\"]=responseCode.code==200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "csrftoken=SYdhp4jYTfarjEy4jpLN3vOD8qyGR0AIgwowIMqMTkdmZqslppYXiPq2MaFZhMGF",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/public/salesman/dispatch/?salesman_id=367&user_id=430",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"",
+								"api",
+								"headquarters",
+								"crm",
+								"public",
+								"salesman",
+								"dispatch",
+								""
+							],
+							"query": [
+								{
+									"key": "salesman_id",
+									"value": "367"
+								},
+								{
+									"key": "user_id",
+									"value": "430"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消跟进某个跟进中客户",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/clients/following/dismiss/?user_id=404",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"",
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"clients",
+								"following",
+								"dismiss",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "404"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "当前任务列表/新增任务/任务详情/当前任务列表/新增任务",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/tasks/?pk=6",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"",
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"tasks",
+								""
+							],
+							"query": [
+								{
+									"key": "pk",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "私海客户消费明细",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "csrftoken=SYdhp4jYTfarjEy4jpLN3vOD8qyGR0AIgwowIMqMTkdmZqslppYXiPq2MaFZhMGF",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/card_clients/228/expense/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"card_clients",
+								"228",
+								"expense",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "私海客户详情",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/card_clients/228/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"card_clients",
+								"228",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "私海客户跟进记录",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/card_clients/401/return-visit/\n",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"card_clients",
+								"401",
+								"return-visit",
+								"\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "私海断约一月内客户",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/clients/detain/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"clients",
+								"detain",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "私海服务中客户",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/clients/serving/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"clients",
+								"serving",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "私海销售人员详情",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/info/?pk=1",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"info",
+								""
+							],
+							"query": [
+								{
+									"key": "pk",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "私海销售详情页数据",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/index/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"index",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "跟进中客户健康档案",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/card_clients/228/health_archive/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"card_clients",
+								"228",
+								"health_archive",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "跟进中客户列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/clients/following/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"clients",
+								"following",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "销售人员归属客户付费记录",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/public/salesman/35/reg_record/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"public",
+								"salesman",
+								"35",
+								"reg_record",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "销售人员归属客户注册记录",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/public/salesman/35/reg_record/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"public",
+								"salesman",
+								"35",
+								"reg_record",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "销售人员的统计数据",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/public/salesman/pie_chart/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"public",
+								"salesman",
+								"pie_chart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查看销售日报",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/daily-papers/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"daily-papers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "销售日报当天回访记录",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/daily-papers/1/rv/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"daily-papers",
+								"1",
+								"rv",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "销售每日统计数据(回访数/成单数)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/public/salesStat/?date=2021-11-04&size=5&page=3",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"public",
+								"salesStat",
+								""
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2021-11-04"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "添加销售日报",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6IjEzMTIzNDU2NzgzIiwiZXhwIjoxNjM2NTk4NTg3LCJlbWFpbCI6bnVsbCwibW9iaWxlIjoiMTMxMjM0NTY3ODMifQ.zWE-I0avkyRHbfJECjPcLB2PH1Zie-EETxbtdWE62JM",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "csrftoken=SYdhp4jYTfarjEy4jpLN3vOD8qyGR0AIgwowIMqMTkdmZqslppYXiPq2MaFZhMGF",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\":\"3\",\r\n    \"high_potential_count\":\"10\",\r\n    \"summary\":\"跟进\"\r\n}\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://headquarters.yikekanghu.com:1443/api/headquarters/crm/private/daily-papers/",
+							"protocol": "https",
+							"host": [
+								"headquarters",
+								"yikekanghu",
+								"com"
+							],
+							"port": "1443",
+							"path": [
+								"api",
+								"headquarters",
+								"crm",
+								"private",
+								"daily-papers",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
